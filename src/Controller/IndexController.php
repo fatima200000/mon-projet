@@ -23,4 +23,9 @@ class IndexController extends AbstractController
     {
         return new Response(content: "willkommen!");
     }
+    #[Route('/savoirplus', name: 'app_savoirplus')]
+    public function savoirplus(): Response
+    {
+        return new Response(content: "plus !");
+    }
 }
