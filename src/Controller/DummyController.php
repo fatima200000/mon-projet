@@ -11,8 +11,12 @@ class DummyController extends AbstractController
     #[Route('/dummy', name: 'app_dummy')]
     public function index(): Response
     {
+        $text ="Hello this is home !";
+        $tabYear = [2020,2021,2022,2023];
         return $this->render('dummy/index.html.twig', [
             'controller_name' => 'DummyController',
+            "text"=> $text,
+            "years"=>$tabYear
         ]);
     }
 }

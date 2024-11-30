@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use Doctrine\DBAL\Schema\View;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -27,5 +28,17 @@ class IndexController extends AbstractController
     public function savoirplus(): Response
     {
         return new Response(content: "plus !");
+    }
+    #[Route('/dummy', name: 'app_dummy')]
+public function dummy(): Response
+{
+    $text = "hello is home";
+    $tabyear = [2020, 2021, 2022, 2023];
+    
+    return $this->render('dummy/dummy.html.twig', [
+        'text' => $text,
+        'years' => $tabyear,
+    ]);
+
     }
 }
